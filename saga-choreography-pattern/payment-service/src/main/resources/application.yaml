@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          noOfPartitions: 1
+          replicationFactor: 1
+      function:
+         definition: orderEventConsumer;paymentSupplier
+      bindings:
+        orderEventConsumer-in-0:
+            destination: order-event
+        paymentSupplier-out-0:
+            destination: payment-event
+
+
+server:
+  port: 8082
