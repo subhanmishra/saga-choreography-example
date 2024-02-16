@@ -13,14 +13,15 @@ import java.util.function.Consumer;
 @Configuration
 public class OrderEventConsumerConfig {
 
-    Logger logger = LoggerFactory.getLogger(OrderEventConsumerConfig.class);
+    private final PaymentService paymentService;
 
-    @Autowired
-    private PaymentService paymentService;
+    public OrderEventConsumerConfig(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
 
     @Bean
     public Consumer<OrderEvent> orderEventConsumer() {
-        return orderEvent -> paymentService.newOrderEvent(orderEvent);
+        return paymentService::newOrderEvent;
     }
 
 //    @Bean
