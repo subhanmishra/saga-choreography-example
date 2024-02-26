@@ -11,11 +11,10 @@
 
     <artifactId>payment-service</artifactId>
 <dependencies>
-
     <dependency>
-        <groupId>com.subhanmishra</groupId>
-        <artifactId>common-dtos</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <scope>runtime</scope>
     </dependency>
 </dependencies>
 
