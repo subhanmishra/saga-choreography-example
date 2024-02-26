@@ -34,3 +34,5 @@ build/
 
 ### docker volumes
 mysql-data
+pgadmin
+postgres
